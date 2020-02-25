@@ -1,0 +1,109 @@
+<h3>Carta Patrocinio</h3>
+
+<mat-card class="example-card">
+
+    <mat-card-content>
+
+
+        <label id="example-radio-group-label">A quien va dirigida</label>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="aquienva"
+            name="radiobuton">
+            <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+                {{season}}
+            </mat-radio-button>
+        </mat-radio-group>
+
+        <div *ngIf="(aquienva=='Persona')">
+                <div class="form-box">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nombres</mat-label>
+                        <input matInput placeholder="Nombre" [(ngModel)]="persona1.nombres">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="apellidos">
+                        <mat-label>Apellidos</mat-label>
+                        <input matInput placeholder="Apellidos" [(ngModel)]="persona1.apellidos">
+                    </mat-form-field>
+                </div>
+
+                <div class="form-box">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Cargo</mat-label>
+                        <input matInput placeholder="Cargo" [(ngModel)]="persona1.cargo">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="">
+                        <mat-label>Organizacion</mat-label>
+                        <input matInput placeholder="Organizacion" [(ngModel)]="persona1.organizacion">
+                    </mat-form-field>
+                </div>
+
+                <div class="form-box">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Direccion</mat-label>
+                        <input matInput placeholder="Direccion" [(ngModel)]="persona1.direccion">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="">
+                        <mat-label>Detalles</mat-label>
+                        <input matInput placeholder="Detalles" [(ngModel)]="persona1.detalles">
+                    </mat-form-field>
+                </div>
+
+                <div class="form-box">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Ciudad</mat-label>
+                        <input matInput placeholder="Ciudad" [(ngModel)]="persona1.ciudad">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="">
+                        <mat-label>Pais</mat-label>
+                        <input matInput placeholder="Pais" [(ngModel)]="persona1.pais">
+                    </mat-form-field>
+                </div>
+                
+
+                
+            
+        </div>
+        
+        <label id="example-radio-group-label">Idioma</label>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+            [(ngModel)]="idiomaFavorito" name="idiomas" (change)="radioChange($event)">
+            <mat-radio-button class="example-radio-button" *ngFor="let i of idiomas" [value]="i">
+                {{i}}
+            </mat-radio-button>
+        </mat-radio-group>
+
+
+
+    </mat-card-content>
+    <mat-card-actions>
+
+        <mat-table [dataSource]="dataSource" matSort>
+
+            <ng-container matColumnDef="idTipoCarta">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.idTipoCarta}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="nombre">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.nombre}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="acciones">
+                <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <button mat-button color="primary" (click)="descargarReporte(row.idTipoCarta)">
+                        <mat-icon>cloud_download</mat-icon>
+                    </button>
+
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+        </mat-table>
+        <button id="guardarinfo" type="button" mat-raised-button color="primary">Cerrar</button>
+
+
+    </mat-card-actions>
+</mat-card>

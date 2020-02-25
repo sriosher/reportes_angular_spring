@@ -1,0 +1,42 @@
+
+.main-topbar {
+    background: white ;
+    min-height: 130px;
+      max-height: 136px;
+    color: brown;
+    font-size: 14px;    
+
+  }
+
+ 
+  .content {
+    font-size: 15px;
+    line-height: 20px;
+    padding: 0 20px;
+    text-align: justify;
+    float: left;
+
+}
+        
+
+  .img-logo{
+      
+      height: 100%;
+  }
+
+  .text-datos{
+      margin-top: 20px;
+  }
+
+  .mat-grid-tile {
+    background: white;
+    border-right: black;
+    
+  }
+
+  .barra{
+      background: #F8F8F8;
+      width: 100%;
+      margin-top: 30PX;
+      
+  }

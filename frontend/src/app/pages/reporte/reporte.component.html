@@ -1,0 +1,57 @@
+<mat-toolbar style="padding-left: 2rem;">
+    <mat-icon style="cursor: pointer; color: #1192ee; padding-right: 10px;">video_library</mat-icon>Carta Patrocinio
+    <span class="titulo"></span>
+</mat-toolbar>
+<mat-divider></mat-divider>
+<div class="profile-container">
+    <div class="sidebar">
+        
+        <div class="settings">
+            <div class="list">
+                <div class="title contain">
+                    Acciones
+                </div>
+                <div class="child-list">
+                    <ul>
+                        <li [routerLink]="['']" routerLinkActive="active">
+                            Inicio</li>
+                        <li routerLinkActive="active">Estatus</li>
+                        <li  routerLinkActive="active">Presupuesto y Giro</li>
+                        <li [routerLink]="['carta']" routerLinkActive="active">Cartas de Patrocinio</li>
+                        <li  routerLinkActive="active">Certificado Deudas</li>
+                        <li  routerLinkActive="active">Interracciones</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="list">
+                <div class="title contain">
+                    Mi Informacion
+                </div>
+                <div class="child-list">
+                    <ul>
+                        <li  routerLinkActive="active">
+                            Actualizacion de datos</li>
+                        <li routerLinkActive="active">Proyecto Apoyado</li>
+                        <li  routerLinkActive="active">Academica</li>
+                        <li [routerLink]="['/cartas']" routerLinkActive="active">Permanencia</li>
+                        <li  routerLinkActive="active">Laboral</li>
+                        <li  routerLinkActive="active">Codeudores</li>
+                        <li  routerLinkActive="active">Documentos</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="list">
+
+                <div class="title contain">
+                    LOGOUT
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <router-outlet></router-outlet>
+    </div>
+</div>
